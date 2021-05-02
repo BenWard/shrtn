@@ -1,0 +1,23 @@
+# Run the Creek Control panel in Docker for development
+
+version: "3"
+services:
+  shrtn_dev:
+    build:
+      context: .
+      dockerfile: shrtn.dockerfile
+    container_name: shrtn_dev
+    volumes:
+      - ../lib:/var/shrtn/
+      - ./conf:/var/shrtn/config
+  shrtn_http:
+    image: nginx:latest
+    container_name: shrtn_http
+    volumes:
+      - ../lib:/var/shrtn/
+      - ./nginx:/etc/nginx/conf.d
+      - ./logs:/var/log/nginx
+    ports:
+      - "8083:80"
+    depends_on:
+      - shrtn_dev
