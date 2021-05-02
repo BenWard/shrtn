@@ -19,7 +19,8 @@ IDs make for appropriate slugs.
 
 ## Configuration
 
-Configure `config/shrtr.yml` to point to your source of short URL mappings, and the URL to redirect to in the event of a missing mapping (e.g. `404` handler on your site.)
+Configure `config/shrtr.json` to point to your source of short URL mappings, and the
+URL to redirect to in the event of a missing mapping (e.g. `404` handler on your site.)
 
 The mappings file is a simple YAML configuration file:
 
@@ -35,6 +36,4 @@ shorturls:
     id: 1oY6A0
     url: https://example.com/full/article/51212.html
 ```
-
-## Running
 
