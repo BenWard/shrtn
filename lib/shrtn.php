@@ -4,18 +4,6 @@ namespace uk\benward;
 class MissingConfigException extends \Exception {}
 class InvalidMappingsException extends \Exception {}
 
-function crash(...$objects) {
-  if (empty($objects)) {
-    $objects = null;
-  } elseif (count($objects) === 1) {
-    $objects = array_pop($objects);
-  }
-
-  $dump_data = htmlspecialchars(print_r($objects, true));
-  $formatted_dump = "<!DOCTYPE html><pre>$dump_data</pre>";
-  die($formatted_dump);
-}
-
 # Shrtn is a tiny class that handles redirection, via a mappings Yaml file
 class Shrtn {
 
