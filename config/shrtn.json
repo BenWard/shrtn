@@ -1,0 +1,4 @@
+{
+  "mappings": "/var/shrtn/config/mappings.yml",
+  "failure_url": "https://example.com/404"
+}
